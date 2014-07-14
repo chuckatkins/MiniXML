@@ -7,14 +7,15 @@ INTRODUCTION
     This README file describes the Mini-XML library version 2.8.
 
     Mini-XML is a small XML parsing library that you can use to read XML and
-    XML-like data files in your application without requiring large non-standard
-    libraries.  Mini-XML only requires an ANSI C compatible compiler (GCC works,
-    as do most vendors' ANSI C compilers) and a "make" program.
+    XML-like data files in your application without requiring large
+    non-standard libraries.  Mini-XML only requires an ANSI C compatible
+    compiler (GCC works, as do most vendors' ANSI C compilers) and a "make"
+    program.
 
     Mini-XML provides the following functionality:
 
-	- Reading of UTF-8 and UTF-16 and writing of UTF-8 encoded XML files and
-	  strings.
+	- Reading of UTF-8 and UTF-16 and writing of UTF-8 encoded XML files
+          and strings.
 	- Data is stored in a linked-list tree structure, preserving the XML
 	  data hierarchy.
 	- Supports arbitrary element names, attributes, and attribute values
@@ -36,8 +37,8 @@ BUILDING Mini-XML
 
         ./configure
 
-    The default install prefix is /usr/local, which can be overridden using the
-    --prefix option:
+    The default install prefix is /usr/local, which can be overridden using
+    the --prefix option:
 
         ./configure --prefix=/foo
 
@@ -62,8 +63,8 @@ INSTALLING Mini-XML
 
         make install
 
-    Once you have installed it, use the "-lmxml" option to link your application
-    against it.
+    Once you have installed it, use the "-lmxml" option to link your
+    application against it.
 
 
 DOCUMENTATION
@@ -76,12 +77,13 @@ DOCUMENTATION
 
         #include <mxml.h>
 
-    Nodes are defined by the "mxml_node_t" structure; the "type" member defines
-    the node type (element, integer, opaque, real, or text) which determines
-    which value you want to look at in the "value" union.  New nodes can be
-    created using the "mxmlNewElement()", "mxmlNewInteger()", "mxmlNewOpaque()",
-    "mxmlNewReal()", and "mxmlNewText()" functions.  Only elements can have
-    child nodes, and the top node must be an element, usually "?xml".
+    Nodes are defined by the "mxml_node_t" structure; the "type" member
+    defines the node type (element, integer, opaque, real, or text) which
+    determines which value you want to look at in the "value" union.  New
+    nodes can be created using the "mxmlNewElement()", "mxmlNewInteger()",
+    "mxmlNewOpaque()", "mxmlNewReal()", and "mxmlNewText()" functions.  Only
+    elements can have child nodes, and the top node must be an element,
+    usually "?xml".
 
     You load an XML file using the "mxmlLoadFile()" function:
 
@@ -156,8 +158,8 @@ DOCUMENTATION
 	  ... do something ...
 	}
 
-    The "mxmlFindPath()" function finds the (first) value node under a specific
-    element using a "path":
+    The "mxmlFindPath()" function finds the (first) value node under a
+    specific element using a "path":
 
         mxml_node_t *value = mxmlFindPath(tree, "path/to/*/foo/bar");
 
@@ -192,5 +194,5 @@ GETTING HELP AND REPORTING PROBLEMS
 
 LEGAL STUFF
 
-    The Mini-XML library is Copyright 2003-2014 by Michael Sweet.  License terms
-    are described in the file "COPYING".
+    The Mini-XML library is Copyright 2003-2014 by Michael Sweet.  License
+    terms are described in the file "COPYING".
